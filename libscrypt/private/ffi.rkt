@@ -9,7 +9,9 @@
 (provide libscrypt_scrypt)
 
 
-(define-ffi-definer define-libscrypt (ffi-lib "libscrypt" '("0" "")))
+(define-ffi-definer define-libscrypt
+                    (ffi-lib "libscrypt" '("0" ""))
+                    #:default-make-fail make-not-available)
 
 
 (define-libscrypt libscrypt_scrypt
