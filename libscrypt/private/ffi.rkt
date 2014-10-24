@@ -3,14 +3,16 @@
 ; FFI bindings for the scrypt library
 ;
 
-(require (rename-in ffi/unsafe (-> -->))
-         ffi/unsafe/define)
+(require ffi/unsafe/define)
+
+(require
+  (rename-in ffi/unsafe (-> -->)))
 
 (provide libscrypt_scrypt)
 
 
 (define-ffi-definer define-libscrypt
-                    (ffi-lib "libscrypt" '("0" ""))
+                    (ffi-lib "libscrypt" '("0" "") #:fail (λ () #f))
                     #:default-make-fail make-not-available)
 
 
