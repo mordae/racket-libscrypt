@@ -1,0 +1,14 @@
+;; This file was created by make-log-based-eval
+((require libscrypt openssl/sha1)
+ ((3) 0 () 0 () () (c values c (void)))
+ #""
+ #"")
+((time (bytes->hex-string (scrypt "secret" "salt" #:size 8)))
+ ((3) 0 () 0 () () (c values c (u . "05ffaebcca41770a")))
+ #"cpu time: 51 real time: 51 gc time: 0\n"
+ #"")
+((time
+  (bytes->hex-string (scrypt "letmein" "sugar" #:N 14 #:r 28 #:p 1 #:size 16)))
+ ((3) 0 () 0 () () (c values c (u . "7503c151df1219d6fcd3a23c97cad9d5")))
+ #"cpu time: 173 real time: 173 gc time: 0\n"
+ #"")
