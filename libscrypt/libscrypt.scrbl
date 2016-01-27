@@ -4,7 +4,7 @@
          (for-label racket/base)
          (for-label openssl/sha1)]
 
-@require[scribble/eval unstable/sandbox]
+@require[scribble/eval]
 
 @(define scrypt-eval (make-log-based-eval "libscrypt-log" 'replay))
 @interaction-eval[#:eval scrypt-eval (require libscrypt openssl/sha1)]
